@@ -11,6 +11,7 @@
 		<div id="page-body" role="main">
 			<h1>Welcome to Grails</h1>
 			<p>${welcomeMessage}</p>
+			<p>Hello user: ${username}</p>
 
 			
 		</div>
