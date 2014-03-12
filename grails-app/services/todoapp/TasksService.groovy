@@ -10,4 +10,8 @@ class TasksService {
 	def listUserTasks(User userInstance) {
 		return Task.findByUser(userInstance);
 	}
+	
+	def getUsersTasks(User userInstance) {
+		Task.findAllByUser(userInstance)
+	}
 }

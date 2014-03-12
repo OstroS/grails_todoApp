@@ -3,9 +3,14 @@ package todoapp
 class DashboardController {
 
 	UserService userService;
+	TasksService tasksService;
 	
     def index() { 
 		def welcomeMessage = "Hello Todo App dashboard"
-		render(view: 'index', model: [welcomeMessage: welcomeMessage, username: userService.getCurrentUser().username])
+		def currentUser = userService.getCurrentUser()
+		def username = currentUser.username
+		def usersTasks = tasksService.getUsersTasks(currentUser)
+		
+		render(view: 'index', model: [welcomeMessage: welcomeMessage, username: username, usersTasks: usersTasks])
 	}
 }
